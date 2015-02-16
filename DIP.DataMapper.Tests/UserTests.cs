@@ -73,6 +73,21 @@ namespace DIP.DataMapper.Tests {
             Assert.Fail("Adding user with existing username doesn't fail");
         }
 
+
+        [TestMethod]
+        public void test_username_notempty() {
+            try {
+                AddUser("", 30);
+            
+            }
+            catch(ArgumentNullException e) {
+                return;
+            }
+
+            Assert.Fail("addign user with empty name didn't fail");
+        }
+
+
         private void AssertAreEqualAge(int expected,Age age) {
             Assert.AreEqual(Age.FromInt(expected), age);
         }

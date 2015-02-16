@@ -11,6 +11,9 @@ namespace DIP.DataMapper.Business {
             _username = username;
         }
         public static Username FromString(string username) {
+            if(string.IsNullOrWhiteSpace(username)) {
+                throw new ArgumentNullException("name");
+            }
             return new Username(username);
         }
 

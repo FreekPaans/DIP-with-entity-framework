@@ -26,6 +26,10 @@ namespace DIP {
         }
 
         public int AddUser(string withUsername, int withAge) {
+            if(string.IsNullOrWhiteSpace(withUsername)) {
+                throw new ArgumentNullException("name");
+            }
+
             var user = _dataAccess.New();
             user.Age = withAge;
             user.Name = withUsername;

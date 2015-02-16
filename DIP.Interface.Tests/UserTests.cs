@@ -68,5 +68,18 @@ namespace DIP.Interface.Tests {
 
             Assert.Fail("Adding user with existing username doesn't fail");
         }
+
+        [TestMethod]
+        public void test_username_notempty() {
+            try {
+                _appService.AddUser("", 30);
+            
+            }
+            catch(ArgumentNullException e) {
+                return;
+            }
+
+            Assert.Fail("addign user with empty name didn't fail");
+        }
     }
 }

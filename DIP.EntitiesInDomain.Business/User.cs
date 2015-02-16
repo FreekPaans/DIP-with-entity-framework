@@ -7,7 +7,19 @@ namespace DIP.EntitiesInDomain.Business {
     public class User {
         public int Age { get; set; }
 
-        public string Name { get; set; }
+        string _name;
+
+        public string Name {
+            get {
+                return _name;
+            }
+            set {
+                if(string.IsNullOrWhiteSpace(value)) {
+                    throw new ArgumentNullException("name");
+                }
+                _name = value;
+            }
+        }
 
         public int Id { get; set; }
     }
