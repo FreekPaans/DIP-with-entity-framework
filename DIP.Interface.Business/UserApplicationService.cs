@@ -20,15 +20,14 @@ namespace DIP {
         }
 
         public void ChangeUsername(int userId, string newName) {
+			AssertValidUsername(newName);
             var user = _dataAccess.GetUserById(userId);
             user.Name = newName;
             _dataAccess.Save();
         }
 
         public int AddUser(string withUsername, int withAge) {
-            if(string.IsNullOrWhiteSpace(withUsername)) {
-                throw new ArgumentNullException("name");
-            }
+			AssertValidUsername(withUsername);
 
             var user = _dataAccess.New();
             user.Age = withAge;
@@ -37,5 +36,11 @@ namespace DIP {
 
             return user.Id;
         }
+
+		private static void AssertValidUsername(string withUsername) {
+			if(string.IsNullOrWhiteSpace(withUsername)) {
+				throw new ArgumentNullException("name");
+			}
+		}
     }
 }
