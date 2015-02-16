@@ -38,5 +38,11 @@ namespace DIP.DataMapper.Business {
 
             Id = id;
         }
+
+        public bool IsNew {
+            get {
+                return Id.IsTemporary;
+            }
+        }
     }
 }

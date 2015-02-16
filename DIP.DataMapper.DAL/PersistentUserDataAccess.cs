@@ -29,7 +29,7 @@ namespace DIP.DataMapper.DAL {
         }
 
         public void Save(User user) {
-            if(user.Id.IsTemporary) {
+            if(user.IsNew) {
                 SaveNewUser(user);
                 return;
             }
