@@ -1,9 +1,10 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using DIP.Interface.DAL;
+using DIP.EntitiesInDomain.Business;
+using DIP.EntitiesInDomain.DAL;
 using System.Data.Entity.Infrastructure;
 
-namespace DIP.Interface.Tests {
+namespace DIP.EntitiesInDomain.Tests {
     [TestClass]
     public class UserTests {
         UserApplicationService _appService;
@@ -53,7 +54,7 @@ namespace DIP.Interface.Tests {
 
             Assert.AreEqual(userId,foundUserId);
         }
-        
+
         [TestMethod]
         public void test_username_unique() {
             _appService.AddUser("freek", 30);

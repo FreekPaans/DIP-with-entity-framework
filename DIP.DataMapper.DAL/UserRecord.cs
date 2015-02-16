@@ -5,8 +5,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 
-namespace DIP.Interface.DAL {
-    class User : IUser{
+namespace DIP.DataMapper.DAL {
+    class UserRecord {
         [Key]
         public int Id {get;set;}
         [Index(IsUnique=true)]

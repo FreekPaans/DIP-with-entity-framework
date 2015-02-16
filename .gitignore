@@ -6,3 +6,15 @@
 /DIP.Interface.Tests/bin
 /packages
 /DIP.v11.suo
+/DIP.DataMapper.Business/obj
+/DIP.DataMapper.Business/bin
+/DIP.DataMapper.DAL/obj
+/DIP.DataMapper.DAL/bin
+/DIP.DataMapper.Tests/bin
+/DIP.DataMapper.Tests/obj
+/DIP.EntitiesInDomain.Business/obj
+/DIP.EntitiesInDomain.Business/bin
+/DIP.EntitiesInDomain.DAL/obj
+/DIP.EntitiesInDomain.DAL/bin
+/DIP.EntitiesInDomain.Tests/obj
+/DIP.EntitiesInDomain.Tests/bin
